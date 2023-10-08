@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<div class="main-content">
+		<div class="left-panel">
+			<div class="header-text">
+				<div>
+					<h2>Beyond Blood Pressure</h2>
+					<h5>Creating a More Complete Health Picture</h5>
+					<p>When it comes to understanding a person's health, the basics like temperature and weight are
+						helpful. Yet more complete
+						picture forms with more information. The <i>All of Us</i> Data Browser contains a variety of
+						data across four categories.
+						Researchers use it to better understand how many factors, including some that may surprise you,
+						come together to shape
+						health.</p>
+				</div>
+			</div>
+			<div class="puzzle-container">
+				<div class="puzzle-column boundry-column">
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-1 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-2 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-3 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-4 puzzle-tile-default">
+						</div>
+					</div>
+				</div>
+				<div class="puzzle-column">
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-5 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-6 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-7 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-8 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-9 puzzle-tile-default">
+						</div>
+					</div>
+				</div>
+				<div class="puzzle-column">
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-10 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-11 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-12 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-13 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-14 puzzle-tile-default">
+						</div>
+					</div>
+				</div>
+				<div class="puzzle-column boundry-column">
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-15 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-16 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-17 puzzle-tile-default">
+						</div>
+					</div>
+					<div class="puzzle-box">
+						<div class="puzzle-tile puzzle-tile-18 puzzle-tile-default">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="right-panel">
+			<div class="column-info">
+				<div class="mock-box">
+					<img src="assets/images/small-mock-with-test.png" />
+				</div>
+				<div class="dropable-container">
+					<div class="dropable" id="drag-box">
+						<img class="draggable" id="drop-image" src="assets/images/draggable-image.png" />
+					</div>
+				</div>
+				<div class="drop-status">
+					<div>
+						<h4 id="answerType">Please Drag TiIle Above</h4>
+						<p id="answerMessage">
+							Please drag tile above to one of the boxes on right to see the results.
+						</p>
+					</div>
+				</div>
+				<div class="click-message">
+					<div>
+						<div class="text-nomral detail-msg">
+							<a href="javascript:;">Click here</a> to learn more about the All of Us Research Program and
+							the four different data categories.
+						</div>
+						<input type="hidden" id="drop-image-input" />
+					</div>
+				</div>
+			</div>
+			<div class="column-dropables">
+				<div class="dropable-box dropable-box-genetic" data-catergory="Genetic">
+				</div>
+				<div class="dropable-box dropable-box-health" data-catergory="HealthRecord">
+				</div>
+				<div class="dropable-box dropable-box-measurement" data-catergory="Measurement">
+				</div>
+				<div class="dropable-box dropable-box-survey" data-catergory="Survey">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<style type="text/css">
+	body {
+		background-color: #6da9db;
+	}
+
+	.puzzle-tile {
+		width: 180px;
+		height: 180px;
+		background-size: contain;
+		margin-bottom: 10px;
+	}
+
+	.puzzle-column {
+		float: left;
+		width: 190px;
+	}
+
+	.boundry-column {
+		margin-top: 95px;
+	}
+
+	.left-panel {
+		max-width: 50%;
+		float: left;
+	}
+
+	.left-panel img {
+		max-width: 100%;
+	}
+
+	.left-panel .header-text {
+		max-width: 100%;
+	}
+
+	.right-panel {
+		float: left;
+		width: 50%;
+	}
+
+	.mock-box {}
+
+	.column-info {
+		float: left;
+		width: 50%;
+	}
+
+	.column-dropables {
+		width: 50%;
+		float: left;
+	}
+
+	.dropable-box {
+		background-size: cover;
+		background-repeat: no-repeat;
+		width: 280px;
+		margin: 40px;
+		height: 280px;
+	}
+
+	.dropable-box-genetic {
+		background-image: url(assets/images/genetic.png);
+	}
+
+	.dropable-box-health {
+		background-image: url(assets/images/health-record.png);
+	}
+
+	.dropable-box-measurement {
+		background-image: url(assets/images/measurement.png);
+	}
+
+	.dropable-box-survey {
+		background-image: url(assets/images/survey.png);
+	}
+
+	.header-text {
+		padding: 40px 110px 0px;
+	}
+
+	.puzzle-container {
+		margin: 30px 10%;
+		width: 100%;
+	}
+
+	.mock-box img {
+		max-width: 100%;
+	}
+
+	.main-content {
+		width: 1780px;
+		margin: 0 auto;
+	}
+
+	.dropable-container {
+		background-image: url(assets/images/stack.png);
+		background-size: contain;
+		width: 80%;
+		height: 344px;
+		background-repeat: no-repeat;
+		padding: 15px;
+		margin: 20px auto;
+		position: relative;
+	}
+
+	.dropable img {
+		width: 342px;
+		margin-top: 17px;
+		margin-left: 26px;
+		cursor: pointer;
+	}
+
+	.drop-status {
+		background: #1777c6;
+		padding: 10px;
+		border-radius: 20px;
+		color: #fff;
+		font-family: Helvetica Neue;
+		margin-top: 50px;
+	}
+
+	.drop-status h4 {
+		font-size: 32px;
+		text-align: center;
+		margin: 20px auto;
+	}
+
+	.drop-status p,
+	.text-nomral {
+		font-size: 25px;
+		margin: 0px 18px 20px;
+		font-family: "Helvetica Neue";
+	}
+
+	.header-text {
+		max-width: 100%;
+		font-family: "Helvetica Neue";
+		color: #fff;
+	}
+
+	.header-text p {
+		text-align: center;
+		font-size: 17px;
+		font-weight: 500;
+		margin-top: 5px;
+	}
+
+	.header-text h2 {
+		text-align: center;
+		font-size: 50px;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.header-text h5 {
+		text-align: center;
+		font-size: 28px;
+		margin-top: 3px;
+		margin-bottom: 0px;
+	}
+
+	.detail-msg a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.detail-msg {
+		font-weight: bold;
+		line-height: 40px;
+	}
+
+	.click-message {
+		margin-top: 40px;
+	}
+
+
+	.click-message img {
+		width: 100%;
+		margin-top: 40px;
+	}
+
+	.count-container {
+		color: #fa9000;
+		position: absolute;
+		bottom: 30px;
+		right: 40px;
+		font-size: 28px;
+		font-weight: bold;
+	}
+
+	.ui-draggable-dragging {
+		width: 250px !important;
+	}
+</style>
+<script>
+	var messages = {
+		"Genetic": {
+			"correct": "A person’s gene variants can influence their health and the way they respond to medication.",
+			"incorrect": "This belongs in a different category. Try again with a new card!"
+		}, "HealthRecord": {
+			"correct": "Looking at many people’s health records can show how different health conditions could be related.",
+			"incorrect": "This belongs in a different category. Try again with a new card!"
+		}, "Measurement": {
+			"correct": "Whether through one-time snap shots or real-time fitbit data, measurements can provide a lot of information about health.",
+			"incorrect": "This belongs in a different category. Try again with a new card!"
+		}, "Survey": {
+			"correct": "Asking questions about a person’s environment and habits adds a whole new level of information about health!",
+			"incorrect": "This belongs in a different category. Try again with a new card!"
+		}
+	};
+	var answersList = {
+		"Genetic": ["cftr_gene", "brca_1_gene"],
+		"HealthRecord": ["hypertensive_disorder", "amoxicillin", "red_blood_cell_count", "immunization", "chest_x_ray", "heart_rate", "height"],
+		"Measurement": ["blood_pressure", "heart_rate", "height", "amount_of_sleep", "daily_step_count"],
+		"Survey": ["amount_of_sleep", "access_to_health_care", "employment_status", "tobacco_use", "family_cancer_history", "social_isolation", "stress_level"]
+	};
+	var imageNames = []
+	for (let key in answersList) {
+		imageNames = imageNames.concat(answersList[key]);
+	}
+	imageNames = [...new Set(imageNames)];
+	imageNames = imageNames.sort((a, b) => 0.5 - Math.random());
+	var count = 1;
+	let folders = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'];
+	let index = Math.floor(Math.random() * ((folders.length - 1) + 1));
+	$('.puzzle-tile-default').css('background-image', 'url("assets/images/portraits/' + folders[index] + '/0.png")');
+	const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+	const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+	$('#drop-image').attr("src", "assets/images/cards/" + imageNames[count - 1] + ".svg");
+	$('#drop-image-input').val(imageNames[count - 1]);
+	$(function () {
+		$(".draggable").draggable({
+			revert: "invalid",
+			helper: "clone"
+		});
+	});
+	$(".dropable-box").droppable({
+		drop: function (event, ui) {
+			if (count == 19) {
+				return;
+			}
+			let cat = $(this).data("catergory");
+			if (answersList[cat].indexOf($('#drop-image-input').val()) > -1) {
+				jQuery('#answerType').text("Correct!");
+				jQuery('#answerMessage').text(messages[cat].correct);
+			}
+			else {
+				jQuery('#answerType').text("");
+				jQuery('#answerMessage').text(messages[cat].incorrect);
+				return;
+			}
+			console.log($(this).data("catergory"))
+			$('.puzzle-tile-' + shuffledArray[count]).css('background-image', 'url("assets/images/portraits/' + folders[index] + '/' + shuffledArray[count] + '.png")');
+			count++;
+
+			if (count == 12) {
+				window.confetti();
+			}
+			else {
+				$('#drop-image').attr("src", "assets/images/cards/" + imageNames[count - 1] + ".svg");
+				$('#drop-image-input').val(imageNames[count - 1]);
+			}
+		}
+	});
+</script>
+<script>
+	'use strict';
+
+	window.confetti = function () {
+		// Globals
+		var random = Math.random
+			, cos = Math.cos
+			, sin = Math.sin
+			, PI = Math.PI
+			, PI2 = PI * 2
+			, timer = undefined
+			, frame = undefined
+			, confetti = [];
+
+		var particles = 10
+			, spread = 40
+			, sizeMin = 3
+			, sizeMax = 12 - sizeMin
+			, eccentricity = 10
+			, deviation = 100
+			, dxThetaMin = -.1
+			, dxThetaMax = -dxThetaMin - dxThetaMin
+			, dyMin = .13
+			, dyMax = .18
+			, dThetaMin = .4
+			, dThetaMax = .7 - dThetaMin;
+
+		var colorThemes = [
+			function () {
+				return color(200 * random() | 0, 200 * random() | 0, 200 * random() | 0);
+			}, function () {
+				var black = 200 * random() | 0; return color(200, black, black);
+			}, function () {
+				var black = 200 * random() | 0; return color(black, 200, black);
+			}, function () {
+				var black = 200 * random() | 0; return color(black, black, 200);
+			}, function () {
+				return color(200, 100, 200 * random() | 0);
+			}, function () {
+				return color(200 * random() | 0, 200, 200);
+			}, function () {
+				var black = 256 * random() | 0; return color(black, black, black);
+			}, function () {
+				return colorThemes[random() < .5 ? 1 : 2]();
+			}, function () {
+				return colorThemes[random() < .5 ? 3 : 5]();
+			}, function () {
+				return colorThemes[random() < .5 ? 2 : 4]();
+			}
+		];
+		function color(r, g, b) {
+			return 'rgb(' + r + ',' + g + ',' + b + ')';
+		}
+
+		// Cosine interpolation
+		function interpolation(a, b, t) {
+			return (1 - cos(PI * t)) / 2 * (b - a) + a;
+		}
+
+		// Create a 1D Maximal Poisson Disc over [0, 1]
+		var radius = 1 / eccentricity, radius2 = radius + radius;
+		function createPoisson() {
+			// domain is the set of points which are still available to pick from
+			// D = union{ [d_i, d_i+1] | i is even }
+			var domain = [radius, 1 - radius], measure = 1 - radius2, spline = [0, 1];
+			while (measure) {
+				var dart = measure * random(), i, l, interval, a, b, c, d;
+
+				// Find where dart lies
+				for (i = 0, l = domain.length, measure = 0; i < l; i += 2) {
+					a = domain[i], b = domain[i + 1], interval = b - a;
+					if (dart < measure + interval) {
+						spline.push(dart += a - measure);
+						break;
+					}
+					measure += interval;
+				}
+				c = dart - radius, d = dart + radius;
+
+				// Update the domain
+				for (i = domain.length - 1; i > 0; i -= 2) {
+					l = i - 1, a = domain[l], b = domain[i];
+					// c---d          c---d  Do nothing
+					//   c-----d  c-----d    Move interior
+					//   c--------------d    Delete interval
+					//         c--d          Split interval
+					//       a------b
+					if (a >= c && a < d)
+						if (b > d) domain[l] = d; // Move interior (Left case)
+						else domain.splice(l, 2); // Delete interval
+					else if (a < c && b > c)
+						if (b <= d) domain[i] = c; // Move interior (Right case)
+						else domain.splice(i, 0, c, d); // Split interval
+				}
+
+				// Re-measure the domain
+				for (i = 0, l = domain.length, measure = 0; i < l; i += 2)
+					measure += domain[i + 1] - domain[i];
+			}
+
+			return spline.sort();
+		}
+
+		// Create the overarching container
+		var container = document.createElement('div');
+		container.style.position = 'fixed';
+		container.style.top = '0';
+		container.style.left = '0';
+		container.style.width = '100%';
+		container.style.height = '0';
+		container.style.overflow = 'visible';
+		container.style.zIndex = '9999';
+
+		// Confetto constructor
+		function Confetto(theme) {
+			this.frame = 0;
+			this.outer = document.createElement('div');
+			this.inner = document.createElement('div');
+			this.outer.appendChild(this.inner);
+
+			var outerStyle = this.outer.style, innerStyle = this.inner.style;
+			outerStyle.position = 'absolute';
+			outerStyle.width = (sizeMin + sizeMax * random()) + 'px';
+			outerStyle.height = (sizeMin + sizeMax * random()) + 'px';
+			innerStyle.width = '100%';
+			innerStyle.height = '100%';
+			innerStyle.backgroundColor = theme();
+
+			outerStyle.perspective = '50px';
+			outerStyle.transform = 'rotate(' + (360 * random()) + 'deg)';
+			this.axis = 'rotate3D(' +
+				cos(360 * random()) + ',' +
+				cos(360 * random()) + ',0,';
+			this.theta = 360 * random();
+			this.dTheta = dThetaMin + dThetaMax * random();
+			innerStyle.transform = this.axis + this.theta + 'deg)';
+
+			this.x = window.innerWidth * random();
+			this.y = -deviation;
+			this.dx = sin(dxThetaMin + dxThetaMax * random());
+			this.dy = dyMin + dyMax * random();
+			outerStyle.left = this.x + 'px';
+			outerStyle.top = this.y + 'px';
+
+			// Create the periodic spline
+			this.splineX = createPoisson();
+			this.splineY = [];
+			for (var i = 1, l = this.splineX.length - 1; i < l; ++i)
+				this.splineY[i] = deviation * random();
+			this.splineY[0] = this.splineY[l] = deviation * random();
+
+			this.update = function (height, delta) {
+				this.frame += delta;
+				this.x += this.dx * delta;
+				this.y += this.dy * delta;
+				this.theta += this.dTheta * delta;
+
+				// Compute spline and convert to polar
+				var phi = this.frame % 7777 / 7777, i = 0, j = 1;
+				while (phi >= this.splineX[j]) i = j++;
+				var rho = interpolation(
+					this.splineY[i],
+					this.splineY[j],
+					(phi - this.splineX[i]) / (this.splineX[j] - this.splineX[i])
+				);
+				phi *= PI2;
+
+				outerStyle.left = this.x + rho * cos(phi) + 'px';
+				outerStyle.top = this.y + rho * sin(phi) + 'px';
+				innerStyle.transform = this.axis + this.theta + 'deg)';
+				return this.y > height + deviation;
+			};
+		}
+
+		function poof() {
+			if (!frame) {
+				// Append the container
+				document.body.appendChild(container);
+
+				// Add confetti
+				var theme = colorThemes[0]
+					, count = 0;
+				(function addConfetto() {
+					var confetto = new Confetto(theme);
+					confetti.push(confetto);
+					container.appendChild(confetto.outer);
+					timer = setTimeout(addConfetto, spread * random());
+				})(0);
+
+				// Start the loop
+				var prev = undefined;
+				requestAnimationFrame(function loop(timestamp) {
+					var delta = prev ? timestamp - prev : 0;
+					prev = timestamp;
+					var height = window.innerHeight;
+
+					for (var i = confetti.length - 1; i >= 0; --i) {
+						if (confetti[i].update(height, delta)) {
+							container.removeChild(confetti[i].outer);
+							confetti.splice(i, 1);
+						}
+					}
+
+					if (timer || confetti.length)
+						return frame = requestAnimationFrame(loop);
+
+					// Cleanup
+					document.body.removeChild(container);
+					frame = undefined;
+				});
+			}
+		}
+
+		poof();
+	};
+
+</script>
+
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231.49 231.49">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffcf50;
+        stroke: #fff6d9;
+        stroke-miterlimit: 10;
+        stroke-width: 4.72px;
+      }
+    </style>
+  </defs>
+  <g id="Buttons">
+    <path class="cls-1" d="m30.54,2.36h170.41c15.55,0,28.18,12.63,28.18,28.18v170.41c0,15.55-12.63,28.18-28.18,28.18H30.54c-15.55,0-28.18-12.63-28.18-28.18V30.54C2.36,14.99,14.99,2.36,30.54,2.36Z"/>
+  </g>
+</svg>

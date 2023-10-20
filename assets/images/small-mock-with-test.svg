@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 262 196">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        fill: #ff64d7;
+      }
+
+      .cls-2, .cls-3 {
+        mix-blend-mode: multiply;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #ea83ff;
+      }
+
+      .cls-4 {
+        fill: #55ff59;
+        mix-blend-mode: hue;
+      }
+
+      .cls-5 {
+        fill: #52efff;
+      }
+
+      .cls-5, .cls-14 {
+        mix-blend-mode: luminosity;
+      }
+
+      .cls-6 {
+        fill: #ff2929;
+        mix-blend-mode: color-dodge;
+        opacity: .62;
+      }
+
+      .cls-7 {
+        mix-blend-mode: difference;
+        opacity: .3;
+      }
+
+      .cls-7, .cls-10, .cls-11, .cls-14 {
+        fill: #fff6d9;
+      }
+
+      .cls-25 {
+        font-family: Gotham-BoldItalic, Gotham;
+        font-size: 28px;
+        font-style: italic;
+        font-weight: 700;
+      }
+
+      .cls-8 {
+        fill: #6e9bff;
+        mix-blend-mode: color;
+      }
+
+      .cls-9, .cls-10 {
+        mix-blend-mode: soft-light;
+      }
+
+      .cls-9, .cls-23 {
+        fill: #fff;
+      }
+
+      .cls-11 {
+        opacity: .35;
+      }
+
+      .cls-11, .cls-13 {
+        mix-blend-mode: overlay;
+      }
+
+      .cls-12 {
+        fill: #7373ff;
+        mix-blend-mode: saturation;
+      }
+
+      .cls-13 {
+        fill: #ffd45c;
+      }
+
+      .cls-14 {
+        opacity: .31;
+      }
+
+      .cls-15 {
+        fill: #ccae5a;
+      }
+
+      .cls-15, .cls-16, .cls-17 {
+        mix-blend-mode: hard-light;
+      }
+
+      .cls-16 {
+        fill: #ac56cc;
+      }
+
+      .cls-17 {
+        fill: #eaff71;
+      }
+
+      .cls-26 {
+        isolation: isolate;
+      }
+
+      .cls-18 {
+        fill: #7c00ff;
+        mix-blend-mode: screen;
+        opacity: .42;
+      }
+
+      .cls-19 {
+        fill: #4fb4e5;
+      }
+
+      .cls-20 {
+        fill: #9a95d8;
+      }
+
+      .cls-21 {
+        fill: #41be90;
+      }
+
+      .cls-22 {
+        fill: #1777c6;
+      }
+
+      .cls-24 {
+        fill: #ffcf50;
+      }
+    </style>
+  </defs>
+  <g class="cls-26">
+    <g id="Layer_2" data-name="Layer 2">
+      <g id="Guide_Image" data-name="Guide Image">
+        <g>
+          <rect class="cls-22" width="262" height="196" rx="15.72" ry="15.72"/>
+          <g id="Color_Filter" data-name="Color Filter">
+            <rect class="cls-18" x="80.53" y="10.32" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-6" x="80.53" y="79.61" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-7" x="80.53" y="114.26" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-14" x="80.53" y="148.91" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-11" x="45.64" y="10.32" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-15" x="45.64" y="44.97" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-9" x="45.64" y="79.62" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-5" x="45.64" y="114.27" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-12" x="45.64" y="148.91" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-17" x="115.71" y="25.54" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-10" x="115.71" y="60.19" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-16" x="115.71" y="94.83" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-4" x="115.71" y="129.48" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-2" x="10.6" y="25.04" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-8" x="10.6" y="59.69" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-13" x="10.6" y="94.34" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+            <rect class="cls-3" x="10.6" y="128.99" width="34.29" height="34.29" rx="7.54" ry="7.54"/>
+          </g>
+          <g>
+            <line class="cls-1" x1="192.5" y1="76.5" x2="210.84" y2="54.59"/>
+            <polygon class="cls-23" points="213.43 58.48 214.98 49.64 206.55 52.72 213.43 58.48"/>
+          </g>
+          <g>
+            <line class="cls-1" x1="194.5" y1="125.5" x2="213.55" y2="145.7"/>
+            <polygon class="cls-23" points="209.38 147.82 217.98 150.39 215.91 141.66 209.38 147.82"/>
+          </g>
+          <g>
+            <line class="cls-1" x1="200.5" y1="107.5" x2="212.72" y2="113.61"/>
+            <polygon class="cls-23" points="209.54 117.04 218.5 116.5 213.56 109.01 209.54 117.04"/>
+          </g>
+          <g>
+            <line class="cls-1" x1="200.5" y1="88.5" x2="212.72" y2="82.39"/>
+            <polygon class="cls-23" points="213.56 86.99 218.5 79.5 209.54 78.96 213.56 86.99"/>
+          </g>
+          <rect class="cls-20" x="223.8" y="134.8" width="30.2" height="30.2" rx="4.63" ry="4.63"/>
+          <rect class="cls-19" x="223.8" y="101.23" width="30.2" height="30.2" rx="4.63" ry="4.63"/>
+          <rect class="cls-23" x="157.48" y="82.43" width="38.28" height="38.28" rx="8.66" ry="8.66"/>
+          <rect class="cls-21" x="223.8" y="67.67" width="30.2" height="30.2" rx="4.63" ry="4.63"/>
+          <rect class="cls-24" x="223.8" y="34.1" width="30.2" height="30.2" rx="4.63" ry="4.63"/>
+          <text class="cls-25" transform="translate(169.11 110.24)"><tspan x="0" y="0">?</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

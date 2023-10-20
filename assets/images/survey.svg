@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231.49 231.49">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #9a95d8;
+        stroke: #fff6d9;
+        stroke-miterlimit: 10;
+        stroke-width: 4.72px;
+      }
+    </style>
+  </defs>
+  <g id="Buttons">
+    <rect class="cls-1" x="2.36" y="2.36" width="226.77" height="226.77" rx="28.18" ry="28.18"/>
+  </g>
+</svg>

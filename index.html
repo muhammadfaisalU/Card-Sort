@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+	<meta charset="UTF-8">
+	<meta name="authoring-tool" content="Adobe_Animate_CC">
+	<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+	<script src="assets/animations/A/AoU_CS_Animate_HTML5_Canvas_A.js"></script>
+	<script src="assets/animations/B/AoU_CS_Animate_HTML5_Canvas_B.js"></script>
+	<script src="assets/animations/C/AoU_CS_Animate_HTML5_Canvas_C.js"></script>
+	<script src="assets/animations/D/AoU_CS_Animate_HTML5_Canvas_D.js"></script>
+	<script src="assets/animations/E/AoU_CS_Animate_HTML5_Canvas_E.js"></script>
+	<script src="assets/animations/F/AoU_CS_Animate_HTML5_Canvas_F.js"></script>
+	<script src="assets/animations/G/AoU_CS_Animate_HTML5_Canvas_G.js"></script>
+	<script src="assets/animations/H/AoU_CS_Animate_HTML5_Canvas_H.js"></script>
+	<script src="assets/animations/I/AoU_CS_Animate_HTML5_Canvas_I.js"></script>
+	<script src="assets/animations/J/AoU_CS_Animate_HTML5_Canvas_J.js"></script>
+	<script src="assets/animations/K/AoU_CS_Animate_HTML5_Canvas_K.js"></script>
+	<script src="assets/animations/L/AoU_CS_Animate_HTML5_Canvas_L.js"></script>
+	<script src="assets/animations/M/AoU_CS_Animate_HTML5_Canvas_M.js"></script>
+	<script src="assets/animations/N/AoU_CS_Animate_HTML5_Canvas_N.js"></script>
+</head>
 <body>
 	<div class="main-content">
 		<div class="left-panel">
@@ -15,6 +33,11 @@
 						Researchers use it to better understand how many factors, including some that may surprise you,
 						come together to shape
 						health.</p>
+				</div>
+			</div>
+			<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:900px; height:1010px; position: absolute; border-radius: 40px; margin-top: 12px;">
+				<canvas id="canvas" width="900" height="1010" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00); border-radius: 40px;"></canvas>
+				<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:900px; height:1010px; position: absolute; left: 0px; top: 0px; display: block;">
 				</div>
 			</div>
 			<div class="puzzle-container">
@@ -108,7 +131,7 @@
 
 						<img src="assets/images/small-mock-with-test.svg" />
 					</div>
-					<p id="" style="font-size: 24px; font-weight: bold; text-align: justify;">
+					<p id="" style="font-size: 24px; font-weight: bold; text-align: justify; font-family: 'Gotham-Medium';">
 						To see a more complete picture, correctly drag each card to the most appropriate category.
 					</p>
 				</div>
@@ -175,8 +198,27 @@
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <style type="text/css">
+	@font-face {
+		font-family: 'Gotham-Bold';
+		src: url('font/Gotham-Bold.otf') format('opentype');		
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Gotham-Light';
+		src: url('font/Gotham-Light.otf') format('opentype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Gotham-Medium';
+		src: url('font/Gotham-Medium.otf') format('opentype');
+		font-weight: normal;
+		font-style: normal;
+	}
 	body {
 		background-color: #6da9db;
+		width: 900px;
 	}
 
 	.puzzle-tile {
@@ -233,6 +275,10 @@
 		height: 280px;
 		display: grid; 
 		align-items: center; 
+	}
+
+	#animation_container {
+		display: none;
 	}
 
 	.dropable-box-genetic {
@@ -300,13 +346,23 @@
 		font-size: 32px;
 		text-align: center;
 		margin: 20px auto;
+		font-family: 'Gotham-Medium';
 	}
 
 	.drop-status p,
 	.text-nomral {
 		font-size: 25px;
 		margin: 0px 16px 20px;
-		font-family: "Helvetica Neue";
+		font-family: 'Gotham-Medium';
+	}
+
+	.dropable-box h1 {
+		font-family: 'Gotham-Medium';
+	}
+
+	.dropable-box p {
+		font-family: 'Gotham-Medium';
+		padding: 10px;
 	}
 
 	.glow-animation-red {
@@ -419,6 +475,7 @@
 		font-size: 17px;
 		font-weight: 500;
 		margin-top: 5px;
+		font-family: "Gotham-Light";
 	}
 
 	.header-text h2 {
@@ -426,6 +483,7 @@
 		font-size: 50px;
 		font-weight: 600;
 		margin: 0;
+		font-family: 'Gotham-Bold';
 	}
 
 	.header-text h5 {
@@ -433,6 +491,7 @@
 		font-size: 28px;
 		margin-top: 3px;
 		margin-bottom: 0px;
+		font-family: 'Gotham-Bold';
 	}
 
 	.detail-msg a {
@@ -554,16 +613,22 @@
 				$('#drop-image-input').val(imageNames[count-1]);
 				return;
 			}
-			$('.puzzle-tile-' + shuffledArray[count]).css('background-image', 'url("assets/images/portraits/' + folders[index] + '/' + shuffledArray[count] + '.png")');
+			if(shuffledArray[count] == 0)
+				$('.puzzle-tile-' + shuffledArray[count]).css('background-image', 'url("assets/images/portraits/' + folders[index] + '/' + shuffledArray[count] + '.png")');
+			else
+				$('.puzzle-tile-' + shuffledArray[count]).css('background-image', 'url("assets/images/portraits/' + folders[index] + '/' + shuffledArray[count] + '.svg")');
 			count++;
-
+			
 			if (count == 19) {
 				imageNames = [];
 				imageNames = [];
 				$('#drop-image').attr("src", "assets/images/draggable-image.png");
 				const startBtn = document.getElementById("btn-restart");
+				const anim = document.getElementById("animation_container");
 				startBtn.style.display = "block";
+				anim.style.display = "block";
 				window.confetti();
+				init();
 			}
 			else {
 				$('#drop-image').attr("src", "assets/images/cards/" + imageNames[count - 1] + ".svg");
@@ -595,6 +660,83 @@
 			$('#drop-image-input').val(imageNames[count-1]);
 		}
     });
+	
+	var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+	function init() {
+		canvas = document.getElementById("canvas");
+		anim_container = document.getElementById("animation_container");
+		dom_overlay_container = document.getElementById("dom_overlay_container");
+		var key = "";
+		if(folders[index]=="A"){
+			key = "C81E33273AD646458A7E3988F1CCF1C1";
+		}else if(folders[index]=="B"){
+			key = "3793FFD83AAD4DFC8E107F68E1030B80";
+		}else if(folders[index]=="C"){
+			key = "9B6BBC9F086946F993753FFA1D7F86A3";
+		}else if(folders[index]=="D"){
+			key = "B65A5C07784B4A619B6977139DAD390A";
+		}else if(folders[index]=="E"){
+			key = "FCAB1CA9AEDE4ADF83E50C02023C4741";
+		}else if(folders[index]=="F"){
+			key = "62EAD9858F654BE3B41EED8F76A13CE7";
+		}else if(folders[index]=="G"){
+			key = "64447B338F814C54A273213E2438165E";
+		}else if(folders[index]=="H"){
+			key = "2B0F97927E6A48ECBE9C337A73DDBB16";
+		}else if(folders[index]=="I"){
+			key = "13886011D2AD45A5A0683AFE0ACA72D5";
+		}else if(folders[index]=="J"){
+			key = "8F26DFEA634A4E10AFFA32D041241322";
+		}else if(folders[index]=="K"){
+			key = "ABEEE46AB6E64087B9249EEC250C4637";
+		}else if(folders[index]=="L"){
+			key = "D74A63BB23EF419BBB0A85EE8F332EA1";
+		}else if(folders[index]=="M"){
+			key = "717A0DCD8DC84E5CA17512AB1645BD76";
+		}else{
+			key = "B0A1D6B973AF45CC97726BD86F8A5945";
+		}
+		var comp=AdobeAn.getComposition(key);
+		var lib=comp.getLibrary();
+		if(folders[index]=="M" || folders[index]=="N" || folders[index]=="G"){
+			console.log("arhaaha");
+			var loader = new createjs.LoadQueue(false);
+			loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+			loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+			var lib=comp.getLibrary();
+			loader.loadManifest(lib.properties.manifest);
+		}else{
+			handleComplete({},comp);
+		}
+	}
+	function handleFileLoad(evt, comp) {
+		var images=comp.getImages();	
+		if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+	}
+	function handleComplete(evt,comp) {
+		//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+		var lib=comp.getLibrary();
+		var ss=comp.getSpriteSheet();
+		if(folders[index]=="M" || folders[index]=="N" || folders[index]=="G"){
+			var queue = evt.target;
+			var ssMetadata = lib.ssMetadata;
+			for(i=0; i<ssMetadata.length; i++) {
+				ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+			}
+		}
+		exportRoot = new lib.AoU_CS_Animate_HTML5Canvas();
+		stage = new lib.Stage(canvas);	
+		//Registers the "tick" event listener.
+		fnStartAnimation = function() {
+			stage.addChild(exportRoot);
+			createjs.Ticker.framerate = lib.properties.fps;
+			createjs.Ticker.addEventListener("tick", stage);
+		}	    
+		//Code to support hidpi screens and responsive scaling.
+		AdobeAn.makeResponsive(true,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
+		AdobeAn.compositionLoaded(lib.properties.id);
+		fnStartAnimation();
+	}
 </script>
 <script>
 	'use strict';

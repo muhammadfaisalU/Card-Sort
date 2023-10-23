@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164.52 164.52">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff5cc;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #ecac01;
+      }
+    </style>
+  </defs>
+  <g id="Portraits">
+    <g id="C">
+      <g id="Tiles">
+        <g id="C-2">
+          <path class="cls-2" d="m137.45,0H27.07C12.12,0,0,12.12,0,27.07v110.38c0,14.95,12.12,27.07,27.07,27.07h83.84c15.14-3.91,29.35-5.37,42.14-4.96,6.93-4.9,11.47-12.98,11.47-22.11V27.07c0-14.95-12.12-27.07-27.07-27.07Z"/>
+          <path class="cls-1" d="m110.91,164.52h26.54c5.81,0,11.19-1.84,15.6-4.96-12.79-.42-26.99,1.05-42.14,4.96Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

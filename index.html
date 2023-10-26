@@ -18,6 +18,11 @@
 	<script src="assets/animations/L/AoU_CS_Animate_HTML5_Canvas_L.js"></script>
 	<script src="assets/animations/M/AoU_CS_Animate_HTML5_Canvas_M.js"></script>
 	<script src="assets/animations/N/AoU_CS_Animate_HTML5_Canvas_N.js"></script>
+	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.8.17/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+	<script>$('#drag-box .draggable').draggable();</script>
+
 </head>
 <body>
 	<div class="main-content">
@@ -35,9 +40,9 @@
 						health.</p>
 				</div>
 			</div>
-			<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:900px; height:1010px; position: absolute; border-radius: 40px; margin-top: 12px;">
-				<canvas id="canvas" width="900" height="1010" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00); border-radius: 40px;"></canvas>
-				<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:900px; height:1010px; position: absolute; left: 0px; top: 0px; display: block;">
+			<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:440px; height:500px; position: absolute; border-radius: 40px; margin-top: 12px;">
+				<canvas id="canvas" width="440" height="500" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00); border-radius: 40px;"></canvas>
+				<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:440px; height:500px; position: absolute; left: 0px; top: 0px; display: block;">
 				</div>
 			</div>
 			<div class="puzzle-container">
@@ -132,12 +137,12 @@
 						<img src="assets/images/small-mock-with-test.svg" />
 					</div>
 					<p id="" style="font-size: 24px; font-weight: bold; text-align: justify; font-family: 'Gotham-Medium';">
-						To see a more complete picture, correctly drag each card to the most appropriate category.
+						Drag each card to the category it matches best.
 					</p>
 				</div>
 				<div class="dropable-container" id="glowing-div-start">
 					<div class="dropable" id="drag-box">
-						<img class="draggable" id="drop-image" src="assets/images/draggable-image.png" />
+						<img draggable="true" class="draggable" id="drop-image" src="assets/images/draggable-image.png" />
 					</div>
 				</div>
 				<div class="drop-status" id="glowing-div">
@@ -158,8 +163,7 @@
 				<div class="click-message">
 					<div>
 						<div class="text-nomral detail-msg">
-							<a target="_blank" href="https://databrowser.researchallofus.org/">Click here</a> to learn more about the All of Us Research Program and
-							the four different data categories.
+							<a target="_blank" href="https://databrowser.researchallofus.org/">Click here</a> to explore the <i>All of Us</i> Data Browser.
 						</div>
 						<input type="hidden" id="drop-image-input" />
 					</div>
@@ -218,7 +222,7 @@
 	}
 	body {
 		background-color: #6da9db;
-		width: 900px;
+		margin-top: 120px;
 	}
 
 	.puzzle-tile {
@@ -474,7 +478,7 @@
 		text-align: center;
 		font-size: 17px;
 		font-weight: 500;
-		margin-top: 5px;
+		margin-top: 14px;
 		font-family: "Gotham-Light";
 	}
 
@@ -526,6 +530,84 @@
 	.ui-draggable-dragging {
 		width: 250px !important;
 	}
+
+	@media screen and (max-width: 2024px) {
+		.main-content {
+			width: 900px;
+		}
+		.header-text {
+			padding: 30px 48px 0px;
+		}
+		.header-text h2 {
+			font-size: 27px;
+		}
+		.header-text h5 {
+			font-size: 16px;
+		}
+		.header-text p {
+			font-size: 16px;
+			line-height: 1.4;
+		}
+		.puzzle-tile {
+			width: 90px;
+			height: 90px;
+		}
+		.puzzle-column {
+			width: 95px;
+		}
+		.boundry-column {
+			margin-top: 45px;
+		}
+		.mock-box div {
+			width: 150px !important;
+		}
+		.mock-box p {
+			font-size: 12px !important;
+		}
+		.dropable-container {
+			height: 152px;
+			margin-top: 84px;
+		}
+		.dropable img {
+			width: 162px;
+			margin-top: 8px;
+			margin-left: 12px;
+		}
+		.ui-draggable-dragging {
+			width: 162px !important;
+		}
+		.drop-status h4 {
+			font-size: 16px;
+		}
+		.drop-status p, .text-nomral {
+			font-size: 12px;
+		}
+		.detail-msg {
+			line-height: 20px;
+		}
+		.dropable-box {
+			width: 166px;
+			height: 166px;
+		}
+		.dropable-box>div h1 {
+			font-size: 16px !important;
+		} 
+		.dropable-box>div p {
+			font-size: 13px !important;
+		} 
+		#animation_container {
+			width: 440px !important;
+			height: 500px !important;
+			display: none;
+		}
+		#animation_container #canvas {
+			width: 440px !important;
+			height: 500px !important;
+		}
+		.mock-box {
+			margin-top: 75px;
+		}
+	}
 </style>
 <script>
 	var messages = {
@@ -545,7 +627,7 @@
 	};
 	var answersList = {
 		"Genetic": ["cftr_gene", "brca_1_gene"],
-		"HealthRecord": ["hypertensive_disorder", "amoxicillin", "red_blood_cell_count", "immunization", "chest_x_ray", "heart_rate", "height"],
+		"HealthRecord": ["hypertensive_disorder", "blood_pressure", "amoxicillin", "red_blood_cell_count", "immunization", "chest_x_ray", "heart_rate", "height"],
 		"Measurement": ["blood_pressure", "heart_rate", "height", "amount_of_sleep", "daily_step_count"],
 		"Survey": ["amount_of_sleep", "access_to_health_care", "employment_status", "tobacco_use", "family_cancer_history", "social_isolation", "stress_level"]
 	};
@@ -569,7 +651,7 @@
 				glowingDiv.classList.add("glow-animation-start");
 				glowAnimation = setTimeout(() => {
 					glowingDiv.classList.remove("glow-animation-start");
-				}, 3000);
+				}, 10000);
 		$(".draggable").draggable({
 			revert: "invalid",
 			helper: "clone"
@@ -580,16 +662,45 @@
 	refreshButton.addEventListener("click", () => {
 		location.reload(); // This method will refresh the page
 	});
+	
+	const draggable = document.getElementById('drop-image');
+	let initialX, initialY;
+	let offsetX = 0;
+	let offsetY = 0;
+	let isDraggingg = false;
 
+	draggable.addEventListener('touchstart', (e) => {
+		// draggable.style.position = "absolute";
+		const touch = e.touches[0];
+		initialX = touch.clientX - offsetX;
+		initialY = touch.clientY - offsetY;
+	});
+
+	draggable.addEventListener('touchmove', (e) => {
+		// if (!isDraggingg) return;
+		isDraggingg = true;
+		
+		const touch = e.touches[0];
+		offsetX = touch.clientX - initialX;
+		offsetY = touch.clientY - initialY;
+
+		draggable.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+	});
 
 	
-	$(".dropable-box").droppable({
-		drop: function (event, ui) {
-			if (count > 18) {
+	
+	let refresh = false;
+	$(".dropable-box").droppable();
+	$(".dropable-box").on('drop',function(event, myele){
+			if (count > 18 || refresh) {
 				return;
 			}
 			isDropInCategory = true;
 			let cat = $(this).data("catergory");
+			if(myele.target){
+				cat = myele.target;
+				refresh = true;
+			}
 			if (answersList[cat].indexOf($('#drop-image-input').val()) > -1) {
 				jQuery('#answerType').text("Correct!");
 				jQuery('#answerMessage').text(messages[cat].correct);
@@ -634,8 +745,46 @@
 				$('#drop-image').attr("src", "assets/images/cards/" + imageNames[count - 1] + ".svg");
 				$('#drop-image-input').val(imageNames[count - 1]);
 			}
-		}
+		});
+
+	draggable.addEventListener('touchend', () => {
+		// draggable.style.position = "relative";
+		const droppedElement = getDroppedElement(draggable);
+        if (droppedElement) {
+            const className = droppedElement;
+			refresh = false;
+            console.log("Dropped on element with class:", className);
+			$('.dropable-box').trigger('drop',
+			{
+                originalEvent: {},
+                target: droppedElement.getAttribute("data-catergory")
+            })
+        }
+		offsetX = 0;
+		offsetY = 0;
+		draggable.style.transform = `translate(${0}px, ${0}px)`;
+		isDraggingg = false;
 	});
+
+	function getDroppedElement(draggableElement) {
+		const droppableElements = document.querySelectorAll('.dropable-box');
+		for (const droppableElement of droppableElements) {
+			const draggableRect = draggableElement.getBoundingClientRect();
+			const droppableRect = droppableElement.getBoundingClientRect();
+
+			if (
+				draggableRect.left < droppableRect.right &&
+				draggableRect.right > droppableRect.left &&
+				draggableRect.top < droppableRect.bottom &&
+				draggableRect.bottom > droppableRect.top
+			) {
+				return droppableElement;
+			}
+		}
+
+		return null;
+	}
+
 	$("#drop-image").on("mousedown", function(e) {
 		if(imageNames.length >= count)
         	isDragging = true;
@@ -699,7 +848,6 @@
 		var comp=AdobeAn.getComposition(key);
 		var lib=comp.getLibrary();
 		if(folders[index]=="M" || folders[index]=="N" || folders[index]=="G"){
-			console.log("arhaaha");
 			var loader = new createjs.LoadQueue(false);
 			loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
 			loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
